@@ -3,7 +3,7 @@ import React from 'react'
 function EmployeeDirectory() {
     return (
         <p>
-            hello world
+            Employee Directory
         </p>
     );
 }

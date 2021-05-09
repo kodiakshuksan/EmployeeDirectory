@@ -10,8 +10,10 @@ function App() {
      <div>
       
       <EmployeeDirectory /> 
-      <input type="text" />
+      
       <button>show all managers</button>
+      <button>show all female employees</button>
+      <button>show all plumbers</button>
       <Card />
     
     </div>
