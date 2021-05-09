@@ -1,6 +1,7 @@
 
 import './App.css';
 import EmployeeDirectory from './employeeDirectory';
+import Card from "./Card";
 
 function App() {
   return (
@@ -9,6 +10,9 @@ function App() {
      <div>
       
       <EmployeeDirectory /> 
+      <input type="text" />
+      <button>show all managers</button>
+      <Card />
     
     </div>
     </>
