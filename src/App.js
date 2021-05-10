@@ -3,39 +3,42 @@ import EmployeeDirectory from './employeeDirectory';
 import Card from "./Card";
 import Button from "./Button";
 import React, { useState } from 'react';
+import axios from 'axios';
 
  
-const App = () => {
- // const [userData, setUserData] = useState([]);
- // const [loading, setLoading] = useState(false);
+function App() {
+  const [userData, setUserData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [activeUser, setActiveUser] = useState(false);
-  //const [activeLink, setActiveLink] = useState(0);
+  const [activeLink, setActiveLink] = useState(0);
 
   const onClickHandler = ()=>{
-    console.log("button is working")
+    setLoading(true);
+    axios.get('https://randomuser.me/api/')
+    .then((response)=>{
+      console.log(response.data.results);
+      setUserData(response.data.results);
+    }).catch((error)=>{
+      console.log(error);
+      setLoading(true);
+    }).finally(()=>{
+      setLoading(false);
+      setActiveUser(true);
+    }) 
   }
   return (
-    <>
-   
-     <div>
-      
-      <EmployeeDirectory /> 
-      <Button isActive={activeUser} clicked={onClickHandler }/>
-      
-      <br>
-      </br>
-      <Card />
-      
-      <br>
-      </br>
-      <Card />
-      <br>
-      </br>
-      <Card />
+    <div>
+      <h1>User Directory</h1>
+     <Button isActive={activeUser} clicked={onClickHandler}/>
+      {loading ? (
+        <h1>loading...</h1>
+      ):(
+        <div></div>
+      )}
+</div>
     
-    </div>
-    </>
-  );
-}
-
+  )
+      }
+    
+      
 export default App;
