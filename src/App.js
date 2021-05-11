@@ -5,6 +5,32 @@ import Button from "./Button";
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 
+const styles = {
+  card: {
+    width: "18rem",
+    background: "#e8eaf6"
+  },
+  heading: {
+    background: "#3f51b5",
+    minHeight: 50,
+    lineHeight: 3.5,
+    fontSize: "1.2rem",
+    color: "white",
+    padding: "0 20px"
+  },
+  content: {
+    padding: 20
+  },
+  footer: {
+    background: "#3f51b5",
+    minHeight: 50,
+    lineHeight: 3.5,
+    fontSize: "1.2rem",
+    color: "white",
+    padding: "0 20px"
+  },
+};
+
  
 function App() {
   const [userData, setUserData] = useState([]);
@@ -29,18 +55,22 @@ function App() {
   return (
     <div>
       <h1>User Directory</h1>
+      <br></br>
      <Button isActive={activeUser} clicked={onClickHandler}/>
+     <br></br>
       {loading ? (
         <h1>loading...</h1>
       ):(
         <div>{userData.map((user,index)=>{
           return (
             <>
-            <Card />
+            
             <Fragment>
             <img src={user.picture.medium} alt="#"/>
             </Fragment>
-            
+            <div style={styles.footer}>Employee Name: {user.name.first} {user.name.last}</div>
+            <div style={styles.footer}>Employee Location: {user.location.city}, {user.location.state}</div>
+            <br></br>
             </>
              )
         })}

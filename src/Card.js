@@ -30,15 +30,14 @@ const styles = {
 function Card() {
   return (
     <div style={styles.card}>
-      <div style={styles.heading}>Employee Name</div>
-      <div style={styles.content}>
-        Photo
-      </div>
-      <div style={styles.footer}>Employee Job
-
+      <div style={styles.heading}>Employee Name:{}</div>
+      
+      <div style={styles.footer}>Employee Location:{}
+      
       </div>
       
     </div>
+  
   );
 }
 
