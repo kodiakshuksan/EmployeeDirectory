@@ -2,7 +2,7 @@ import './App.css';
 import EmployeeDirectory from './employeeDirectory';
 import Card from "./Card";
 import Button from "./Button";
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 
  
@@ -14,7 +14,7 @@ function App() {
 
   const onClickHandler = ()=>{
     setLoading(true);
-    axios.get('https://randomuser.me/api/')
+    axios.get('https://randomuser.me/api/?results=10')
     .then((response)=>{
       console.log(response.data.results);
       setUserData(response.data.results);
@@ -33,12 +33,22 @@ function App() {
       {loading ? (
         <h1>loading...</h1>
       ):(
-        <div></div>
+        <div>{userData.map((user,index)=>{
+          return (
+            <>
+            <Card />
+            <Fragment>
+            <img src={user.picture.medium} alt="#"/>
+            </Fragment>
+            
+            </>
+             )
+        })}
+    </div>
       )}
-</div>
-    
-  )
-      }
-    
+    </div>
+      );
+}
+  
       
 export default App;

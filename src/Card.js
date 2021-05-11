@@ -1,8 +1,9 @@
 import React from "react";
+import App from "./App";
 
 const styles = {
   card: {
-    margin: 20,
+    width: "18rem",
     background: "#e8eaf6"
   },
   heading: {
@@ -31,11 +32,12 @@ function Card() {
     <div style={styles.card}>
       <div style={styles.heading}>Employee Name</div>
       <div style={styles.content}>
-        "Photo"
+        Photo
       </div>
       <div style={styles.footer}>Employee Job
 
       </div>
+      
     </div>
   );
 }
