@@ -1,10 +1,12 @@
 import './App.css';
-//import EmployeeDirectory from './employeeDirectory';
+import EmployeeDirectory from './employeeDirectory';
 //import Card from "./Card";
 import Button from "./Button";
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
-//import Gbutton from "./Gbutton";
+import employeeDirectory from './employeeDirectory';
+//import { Form, Field } from "react-final-form";
+
 
 const styles = {
   card: {
@@ -39,7 +41,7 @@ function App() {
   const [activeUser, setActiveUser] = useState(false);
   const [activeLink, setActiveLink] = useState(0);
 
-  const onClickHandler = ()=>{
+  const onClickHandlerDirectory = ()=>{
     setLoading(true);
     axios.get('https://randomuser.me/api/?results=10')
     .then((response)=>{
@@ -56,8 +58,9 @@ function App() {
   return (
     <div>
       <h1>User Directory</h1>
+      <EmployeeDirectory/>
       <br></br>
-     <Button isActive={activeUser} clicked={onClickHandler}/>
+     <Button isActive={activeUser} clicked={onClickHandlerDirectory}/>
     
      <br></br>
       {loading ? (
@@ -71,8 +74,8 @@ function App() {
             <Fragment>
             <img src={user.picture.medium} alt="#"/>
             </Fragment>
-            <div style={styles.footer}>Employee Name: {user.name.first} {user.name.last}</div>
-            <div style={styles.footer}>Employee Location: {user.location.city}, {user.location.state}</div>
+            <div style={styles.footer}>Employee/User Name: {user.name.first} {user.name.last}</div>
+            <div style={styles.footer}>Employee/User Location: {user.location.city}, {user.location.state}</div>
             <br></br>
             </>
              )

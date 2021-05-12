@@ -1,11 +1,20 @@
-import React from 'react'
+import React from 'react';
 
-function EmployeeDirectory() {
+
+const EmployeeDirectory = ({isActive, clicked})=> {
+   
+
     return (
-        <p>
-            Employee Directory
-        </p>
+        <div>
+            
+            <button onClick={clicked}>{isActive ? "Get Another Directory" : "Get Male Employees"}</button>
+
+
+
+        </div>
     );
 }
 
 export default EmployeeDirectory;
+
+
