@@ -1,9 +1,10 @@
 import './App.css';
-import EmployeeDirectory from './employeeDirectory';
-import Card from "./Card";
+//import EmployeeDirectory from './employeeDirectory';
+//import Card from "./Card";
 import Button from "./Button";
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
+//import Gbutton from "./Gbutton";
 
 const styles = {
   card: {
@@ -57,9 +58,11 @@ function App() {
       <h1>User Directory</h1>
       <br></br>
      <Button isActive={activeUser} clicked={onClickHandler}/>
+    
      <br></br>
       {loading ? (
         <h1>loading...</h1>
+      
       ):(
         <div>{userData.map((user,index)=>{
           return (
