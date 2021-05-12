@@ -4,8 +4,7 @@ import EmployeeDirectory from './employeeDirectory';
 import Button from "./Button";
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
-import employeeDirectory from './employeeDirectory';
-//import { Form, Field } from "react-final-form";
+import User from "./user";
 
 
 const styles = {
@@ -57,10 +56,14 @@ function App() {
   }
   return (
     <div>
-      <h1>User Directory</h1>
-      <EmployeeDirectory/>
+      <h1>User/Employee Directory</h1>
+      
       <br></br>
      <Button isActive={activeUser} clicked={onClickHandlerDirectory}/>
+     <br></br>
+     <EmployeeDirectory/>
+     <br></br>
+     <User/>
     
      <br></br>
       {loading ? (

@@ -7,8 +7,7 @@ const EmployeeDirectory = ({isActive, clicked})=> {
     return (
         <div>
             
-            <button onClick={clicked}>{isActive ? "Get Another Directory" : "Get Male Employees"}</button>
-
+            <button onClick={clicked}>{isActive ? "Get Another Directory" : "Get Male Employees/Users"}</button>
 
 
         </div>
