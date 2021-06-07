@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const User = ({isActive, clicked})=> {
+const GetDirectory = ({isActive, clicked})=> {
    
 
     return (
@@ -13,6 +13,6 @@ const User = ({isActive, clicked})=> {
     );
 }
 
-export default User;
+export default GetDirectory;
 
 

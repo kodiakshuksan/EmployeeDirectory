@@ -4,7 +4,9 @@ import EmployeeDirectory from './employeeDirectory';
 import Button from "./Button";
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
-import User from "./user";
+import User from "./getDirectory";
+import GenderFind from './genderFind';
+
 
 
 const styles = {
@@ -61,7 +63,9 @@ function App() {
       <br></br>
      <Button isActive={activeUser} clicked={onClickHandlerDirectory}/>
      <br></br>
-     <EmployeeDirectory/>
+     <EmployeeDirectory isActive={activeUser} clicked={onClickHandlerDirectory}/>
+     <GenderFind isActive={activeUser} clicked={onClickHandlerDirectory}/>
+     
      <br></br>
      <User/>
     
@@ -91,3 +95,22 @@ function App() {
   
       
 export default App;
+
+////import React from 'react';
+///import 'bootstrap/dist/css/bootstrap.min.css';
+// import Header from './components/Header';
+// import Container from './components/Container';
+// import EmployeeList from './components/EmployeeList'
+
+// function App() {
+//   return (
+//     <>
+//       <Header />
+//       <Container>
+//         <EmployeeList />
+//       </Container>
+//     </>
+//   );
+// }
+
+// export default App;
